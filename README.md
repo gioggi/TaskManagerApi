@@ -21,11 +21,11 @@ For development, we use a simplified Docker setup with:
 
 1. Make sure you have Docker and Docker Compose installed on your system.
 
-2. Set your Rails master key as an environment variable:
+2. Copy the `.env.default` file to `.env`:
    ```bash
-   export RAILS_MASTER_KEY=your_master_key_here
+   cp .env.default .env
    ```
-   Note: You can find your master key in the `config/master.key` file.
+   You can modify the environment variable values in the `.env` file if necessary.
 
 3. Start the application using Docker Compose:
    ```bash
@@ -52,130 +52,13 @@ docker-compose logs -f backend
 
 For development without Docker, please refer to the standard Rails development setup.
 
-## API Documentation
+## Documentazione API
 
-The Task Manager API provides the following JSON endpoints:
+La documentazione interattiva delle API è disponibile tramite Swagger all'indirizzo:
 
-### Tasks
+    http://localhost:3000/api-docs
 
-#### Get a Task
-
-```
-GET /api/tasks/:id
-```
-
-Response (200 OK):
-```json
-{
-  "id": 1,
-  "title": "Complete project",
-  "description": "Finish the task manager API implementation",
-  "completed": false,
-  "created_at": "2023-06-20T13:15:41.000Z",
-  "updated_at": "2023-06-20T13:15:41.000Z"
-}
-```
-
-Error Response (404 Not Found):
-```json
-{
-  "error": "Task not found"
-}
-```
-
-#### Create a Task
-
-```
-POST /api/tasks
-```
-
-Request Body:
-```json
-{
-  "task": {
-    "title": "New task",
-    "description": "Description of the new task",
-    "completed": false
-  }
-}
-```
-
-Response (201 Created):
-```json
-{
-  "id": 1,
-  "title": "New task",
-  "description": "Description of the new task",
-  "completed": false,
-  "created_at": "2023-06-20T13:15:41.000Z",
-  "updated_at": "2023-06-20T13:15:41.000Z"
-}
-```
-
-Error Response (422 Unprocessable Entity):
-```json
-{
-  "errors": ["Title can't be blank"]
-}
-```
-
-#### Update a Task
-
-```
-PUT/PATCH /api/tasks/:id
-```
-
-Request Body:
-```json
-{
-  "task": {
-    "title": "Updated task",
-    "description": "Updated description",
-    "completed": true
-  }
-}
-```
-
-Response (200 OK):
-```json
-{
-  "id": 1,
-  "title": "Updated task",
-  "description": "Updated description",
-  "completed": true,
-  "created_at": "2023-06-20T13:15:41.000Z",
-  "updated_at": "2023-06-20T14:30:00.000Z"
-}
-```
-
-Error Responses:
-- 404 Not Found:
-  ```json
-  {
-    "error": "Task not found"
-  }
-  ```
-- 422 Unprocessable Entity:
-  ```json
-  {
-    "errors": ["Title can't be blank"]
-  }
-  ```
-
-#### Delete a Task
-
-```
-DELETE /api/tasks/:id
-```
-
-Response (204 No Content)
-
-Error Response (404 Not Found):
-```json
-{
-  "error": "Task not found"
-}
-```
+Utilizza questa interfaccia per esplorare e testare tutte le API esposte dall'applicazione.
 
 ## Testing
 
