@@ -46,7 +46,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   # Testing framework for Rails
-  gem "rspec-rails", "~> 6.1.0"
+  gem "rspec-rails", "~> 8.0.1"
 
   # Fixtures replacement with a more straightforward syntax
   gem "factory_bot_rails", "~> 6.4.0"
