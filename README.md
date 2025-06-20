@@ -29,10 +29,10 @@ For development, we use a simplified Docker setup with:
 
 3. Start the application using Docker Compose:
    ```bash
-   docker-compose up -d
+   docker compose up -d
    ```
 
-4. The API will be available at http://localhost:3000
+4. The API will be available at http://localhost:3008
 
 ### Stopping the Application
 
@@ -56,7 +56,7 @@ For development without Docker, please refer to the standard Rails development s
 
 La documentazione interattiva delle API è disponibile tramite Swagger all'indirizzo:
 
-    http://localhost:3000/api-docs
+    http://localhost:3008/api-docs
 
 Utilizza questa interfaccia per esplorare e testare tutte le API esposte dall'applicazione.
 
