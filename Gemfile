@@ -52,7 +52,7 @@ group :development, :test do
   gem "factory_bot_rails", "~> 6.4.0"
 
   # Fake data generator for testing
-  gem "faker", "~> 3.2.2"
+  gem "faker", "~> 3.5.2"
 
   # Swagger integration for Rails APIs
   gem "rswag"
