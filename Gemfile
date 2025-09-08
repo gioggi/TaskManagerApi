@@ -49,7 +49,7 @@ group :development, :test do
   gem "rspec-rails", "~> 6.1.0"
 
   # Fixtures replacement with a more straightforward syntax
-  gem "factory_bot_rails", "~> 6.4.0"
+  gem "factory_bot_rails", "~> 6.5.1"
 
   # Fake data generator for testing
   gem "faker", "~> 3.2.2"
